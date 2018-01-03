@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
 import { Button } from 'antd-mobile';
+
+import {addNum, descreaseNum} from "./redux";
+
+import './App.css';
+import logo from './logo.svg';
 
 class App extends Component {
   render() {
+    const { store } = this.props;
+    const num = store.getState();
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <Button type='primary'> test </Button>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <h1>数字: {num}</h1>
+        <Button onClick={() => store.dispatch(addNum())}>+1</Button>
+        <Button onClick={() => store.dispatch(descreaseNum())}>-1</Button>
       </div>
     );
   }

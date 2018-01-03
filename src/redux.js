@@ -1,33 +1,23 @@
-import { createStore } from 'redux';
+const ADD_NUM = 'add';
+const DECREASE_NUM = 'dec';
 
-// 1新建store
 // 通过reducer遍历
 // 根据老的state和action 生产新的state;
-function counter(state = 0, action) {
+export function counter(state = 0, action) {
     switch (action.type){
-        case 'add':
+        case ADD_NUM:
             return state+1;
-        case 'dec':
+        case DECREASE_NUM:
             return state-1;
         default:
             return 10;
     }
 }
 
-// 1新建store
-const store = createStore(counter);
-const init = store.getState();
-export default init;
-
-function listener() {
-    const current = store.getState();
-    console.log(`now state: ${current}`);
+export function addNum() {
+    return {type: ADD_NUM};
 }
-store.subscribe(listener);
-// 派发时间 传递action
-store.dispatch({type: 'add'});
-console.log(store.getState());
-store.dispatch({type: 'add'});
-console.log(store.getState());
-store.dispatch({type: 'dec'});
-console.log(store.getState());
+
+export function descreaseNum() {
+    return {type: DECREASE_NUM};
+}
