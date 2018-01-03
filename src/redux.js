@@ -21,3 +21,11 @@ export function addNum() {
 export function descreaseNum() {
     return {type: DECREASE_NUM};
 }
+
+export function addNumAsync() {
+  return dispatch => {
+    setTimeout(() => {
+      dispatch(addNum());
+    }, 2000)
+  }
+}
