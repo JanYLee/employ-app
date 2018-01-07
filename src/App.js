@@ -1,19 +1,24 @@
 import React, { Component } from 'react';
 import { Button } from 'antd-mobile';
+import { connect } from 'react-redux';
+
+import {addNum, descreaseNum, addNumAsync} from './redux';
 
 import './App.css';
-import logo from './logo.svg';
 
+@connect(
+  state => ({ num: state }),// 你需要的state什么属性放到props
+  {addNum, descreaseNum, addNumAsync} //你需要什么方法放到props, 自动dispatch
+)
 class App extends Component {
   render() {
-    const { store, addNum, descreaseNum, addNumAsync } = this.props;
-    const num = store.getState();
+    const { num, addNum, descreaseNum, addNumAsync } = this.props;
     return (
       <div className="App">
         <h1>数字: {num}</h1>
-        <Button onClick={() => store.dispatch(addNum())}>+1</Button>
-        <Button onClick={() => store.dispatch(descreaseNum())}>-1</Button>
-        <Button onClick={() => store.dispatch(addNumAsync())}>+1 async </Button>
+        <Button onClick={addNum}>+1</Button>
+        <Button onClick={descreaseNum}>-1</Button>
+        <Button onClick={addNumAsync}>+1 async </Button>
       </div>
     );
   }
