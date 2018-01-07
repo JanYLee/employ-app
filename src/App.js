@@ -7,7 +7,7 @@ import {addNum, descreaseNum, addNumAsync} from './redux';
 import './App.css';
 
 @connect(
-  state => ({ num: state }),// 你需要的state什么属性放到props
+  state => ({ num: state.counter }),// 你需要的state什么属性放到props
   {addNum, descreaseNum, addNumAsync} //你需要什么方法放到props, 自动dispatch
 )
 class App extends Component {

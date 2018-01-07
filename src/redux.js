@@ -10,7 +10,7 @@ export function counter(state = 0, action) {
         case DECREASE_NUM:
             return state-1;
         default:
-            return 10;
+            return state;
     }
 }
 
