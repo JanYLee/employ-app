@@ -11,6 +11,8 @@ import Auth from './Auth';
 import Dashboard from './Dashboard';
 import registerServiceWorker from './registerServiceWorker';
 
+import './config.js';
+import 'antd-mobile/dist/antd-mobile.css'
 import './index.css';
 
 const store = createStore(reducers, compose(

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Button } from 'antd-mobile';
 import { connect } from 'react-redux';
 
-import {addNum, descreaseNum, addNumAsync} from './redux';
+import {addNum, descreaseNum, addNumAsync} from './index.redux';
 
 import './App.css';
 
