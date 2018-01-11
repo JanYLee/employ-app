@@ -8,8 +8,10 @@ import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom';
 import reducers from './reducer';
 import registerServiceWorker from './registerServiceWorker';
 
-import Login from './container/login/login'
-import Register from './container/register/register'
+import Login from './container/login/login';
+import Register from './container/register/register';
+
+import AuthRoute from './component/authroute/authroute';
 import './config.js';
 import './index.css';
 
@@ -22,6 +24,7 @@ ReactDOM.render(
   (<Provider store={store}>
     <BrowserRouter>
       <div>
+        <AuthRoute></AuthRoute>
         <Route path='/login' component={Login} />
         <Route path='/register' component={Register} />
       </div>
