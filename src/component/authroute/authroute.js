@@ -26,7 +26,7 @@ class AuthRoute extends React.Component {
   }
 
   render() {
-    return <p>if jump</p>;
+    return null;
   }
 }
 
