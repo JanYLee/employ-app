@@ -18,11 +18,10 @@ class AuthRoute extends React.Component {
         } else {
           this.props.history.push('/login');
         }
-        console.log(res.data);
       }
     });
     // 是否登录 url为Login不需要跳转
-
+    this.props.history.push('/login');
   }
 
   render() {
