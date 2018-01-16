@@ -10,6 +10,7 @@ import registerServiceWorker from './registerServiceWorker';
 
 import Login from './container/login/login';
 import Register from './container/register/register';
+import BossInfo from './container/bossinfo/bossinfo';
 
 import AuthRoute from './component/authroute/authroute';
 import './config.js';
@@ -20,18 +21,16 @@ const store = createStore(reducers, compose(
   window.devToolsExtension ?  window.devToolsExtension(): f=>f
 ));
 
-function Boss() {
-  return <h2>BOSS 页面</h2>
-}
-
 ReactDOM.render(
   (<Provider store={store}>
     <BrowserRouter>
       <div>
         <AuthRoute />
-        <Route path='/boss' component={Boss} />
-        <Route path='/login' component={Login} />
-        <Route path='/register' component={Register} />
+        <Switch>
+          <Route path='/login' component={Login} />
+          <Route path='/register' component={Register} />
+          <Route path='/bossinfo' component={BossInfo}/>
+        </Switch>
       </div>
     </BrowserRouter>
   </Provider>),
