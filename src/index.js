@@ -11,6 +11,7 @@ import registerServiceWorker from './registerServiceWorker';
 import Login from './container/login/login';
 import Register from './container/register/register';
 import BossInfo from './container/bossinfo/bossinfo';
+import GeniusInfo from './container/geniusinfo/geniusinfo';
 
 import AuthRoute from './component/authroute/authroute';
 import './config.js';
@@ -30,6 +31,7 @@ ReactDOM.render(
           <Route path='/login' component={Login} />
           <Route path='/register' component={Register} />
           <Route path='/bossinfo' component={BossInfo}/>
+          <Route path='/geniusinfo' component={GeniusInfo}/>
         </Switch>
       </div>
     </BrowserRouter>
